@@ -1,0 +1,27 @@
+* {
+    font-family:monospace;
+}
+
+body {
+    font-size: 22px;
+}
+
+p {
+    color: purple;
+}
+
+p {
+    color: red;
+}
+
+h1, h2 {
+    color: blue;
+}
+
+.gray {
+    color: gray;
+}
+
+#third {
+    font-style: italic;
+}

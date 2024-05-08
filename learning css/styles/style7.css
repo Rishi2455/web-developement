@@ -1,0 +1,23 @@
+body {
+    padding: 10%;
+    font-size: 2rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a {
+    color: steelblue;
+}
+
+a:visited {
+    color: purple;
+}
+
+a:hover,a:focus {
+    color: rgb(32, 221, 15);
+    opacity: 0.4;
+    background-color: rgb(189, 36, 36);
+}
+
+a:active {
+    color: red;
+}

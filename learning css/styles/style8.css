@@ -1,0 +1,31 @@
+body {
+    padding: 5% 10%;
+    font-size: 2rem;
+    font-family: sans-serif;
+}
+
+ol {
+    list-style-type: upper-roman;
+    /* list-style-type: none;
+    padding: 0;*/
+} 
+
+ul {
+    list-style-type: square;
+    /* text-align: center; */
+    list-style-position: outside;
+    line-height: 1.6;
+    /* list-style-image: url(../image/15578-200.png); */
+    color: blue;
+}
+
+ul li:nth-child(odd) {
+    color: red;
+}
+
+ul ::marker {
+    color: red;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1em;
+    content: "Free >>  ";
+}
