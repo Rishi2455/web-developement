@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>User Registration Form</title>
+</head>
+
+<body>
+    <h2>User Registration Form</h2>
+    <form id="registrationForm" enctype="multipart/form-data">
+
+        <fieldset>
+            <legend>Personal Information</legend>
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required><br><br>
+
+            <label>Gender:</label>
+            <input type="radio" name="gender" value="Male" required> Male
+            <input type="radio" name="gender" value="Female" required> Female
+            <input type="radio" name="gender" value="Other" required> Other<br><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Image</legend>
+            <label for="image">Upload Image:</label>
+            <input type="file" id="image" name="image" accept="image/*" required><br><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Contact Details</legend>
+            <label for="email">Email ID:</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="mobile">Mobile No.:</label>
+            <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required><br><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Address Information</legend>
+            <label for="address">Address:</label><br>
+            <textarea id="address" name="address" rows="4" cols="50" required></textarea><br><br>
+
+            <label for="state">State:</label>
+            <select id="state" name="state" required>
+                <option value="">Select State</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="Delhi">Delhi</option>
+            </select><br><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Education & Upload</legend>
+            <label>Education:</label><br>
+            <input type="checkbox" name="education" value="SSC"> SSC
+            <input type="checkbox" name="education" value="HSC"> HSC
+            <input type="checkbox" name="education" value="Graduation"> Graduation
+            <input type="checkbox" name="education" value="Post Graduation"> Post
+            <br><br>
+        </fieldset>
+
+        <input type="button" value="Display Information" onclick="displayInfo()">
+        <input type="reset" value="Reset">
+    </form>
+
+    <h3>Combined Information:</h3>
+    <textarea id="output" rows="10" cols="100" readonly></textarea>
+<script src="script.js"></script>
+</body>
+
+</html>

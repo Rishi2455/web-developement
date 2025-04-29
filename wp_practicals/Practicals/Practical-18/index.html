@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REST</title>
+</head>
+
+<body>
+    <label for="id">Enter ID:</label>
+    <input type="number" id="idno" name="idno" required><br><br>
+    <input type="submit" value="Get Data" name="getData" onclick="redirect()"><br><br>
+    <script>
+        function redirect() {
+            var id = document.getElementById("idno").value;
+            if (id) {
+                window.location.href = "http://localhost:80/Practical-18/api.php/" + id;
+            }
+        }
+    </script>
+</body>
+
+</html>

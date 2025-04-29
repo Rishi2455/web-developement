@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQUERY</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        .slider {
+            width: 600px;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+            margin: auto;
+        }
+        .slides {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slides img {
+            width: 600px;
+            height: 400px;
+        }
+        .navigation {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .navigation button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <div class="slides">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Taj_Mahal_%28Edited%29.jpeg/1280px-Taj_Mahal_%28Edited%29.jpeg" alt="Image 1">
+            <img src="https://www.thoughtco.com/thmb/oE-wRfhScZ6xZau3HyQYsPTpJ8Q=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Christ_the_Redeemer-140514153-56a02f845f9b58eba4af490a.jpg" alt="Image 2">
+            <img src="https://i.natgeofe.com/n/535f3cba-f8bb-4df2-b0c5-aaca16e9ff31/giza-plateau-pyramids.jpg" alt="Image 3">
+        </div>
+        <div class="navigation">
+            <button id="prev">Prev</button>
+            <button id="next">Next</button>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            let currentIndex = 0;
+            const slides = $('.slides');
+            const totalSlides = $('.slides img').length;
+
+            $('#next').click(function() {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                slides.css('transform', `translateX(-${currentIndex * 600}px)`);
+            });
+
+            $('#prev').click(function() {
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                slides.css('transform', `translateX(-${currentIndex * 600}px)`);
+            });
+        });
+    </script>
+</body>
+</html>

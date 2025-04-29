@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save Background Color</title>
+    <script>
+        // Set the background color from the cookie if it exists
+        document.addEventListener("DOMContentLoaded", function () {
+            const bgColor = getCookie("bgColor");
+            if (bgColor) {
+                document.body.style.backgroundColor = bgColor;
+                console.log(bgColor);
+            }
+        });
+
+        // Function to get a cookie value by name
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(";").shift();
+        }
+    </script>
+</head>
+<body>
+    <form method="POST" action="cookie.php">
+        <label for="colorInput">Enter Color Name:</label>
+        <input type="text" id="colorInput" name="colorInput" placeholder="e.g., red, blue">
+        <button type="submit">SAVE</button>
+    </form>
+</body>
+</html>

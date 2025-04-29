@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+
+<body>
+    <form action="" method="post">
+        <input type="number" name="first" id="first" placeholder="First Number">
+        <input type="text" name="operator" id="operator" placeholder="Operator (+, -, *, /)">
+        <input type="number" name="second" id="second" placeholder="Second Number">
+        <input type="submit" value="=" id="calculate">
+    </form>
+    <script>
+        document.getElementById('calculate').addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent form submission
+
+            const first = parseFloat(document.getElementById('first').value);
+            const operator = document.getElementById('operator').value;
+            const second = parseFloat(document.getElementById('second').value);
+            let result;
+
+            switch (operator) {
+                case '+':
+                    result = first + second;
+                    break;
+                case '-':
+                    result = first - second;
+                    break;
+                case '*':
+                    result = first * second;
+                    break;
+                case '/':
+                    if (second !== 0) {
+                        result = first / second;
+                    } else {
+                        alert("Cannot divide by zero");
+                        return;
+                    }
+                    break;
+                default:
+                    alert("Invalid operator. Please use +, -, *, or /.");
+                    return;
+            }
+
+            document.getElementById("first").value = result; // Set the result as the first number for further calculations
+            document.getElementById("second").value = ""; // Clear the second number input
+            document.getElementById("operator").value = ""; // Clear the operator input
+            document.getElementById("calculate").value = "="; // Reset the button text to "="
+        });
+    </script>
+</body>
+
+</html>
